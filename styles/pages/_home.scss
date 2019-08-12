@@ -1,0 +1,90 @@
+body {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    text-transform: capitalize;
+    .cover {
+        height: 240px;
+        position: relative;
+        place-items: center;
+    }
+    .cover::before {
+        content: "";
+        position: absolute;
+        top: 0;  left: 0;
+        width: 100%; height: 100%;
+        background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSHf47dg8VfO_K1ML4Wmw-rBxwZEe-ywh5KZ8tu9Sa30juHOftofg");
+        filter: grayscale(100%);
+    }
+    .title {
+        font-family: $main-font;
+        font-size: 80px;
+        color: $main-color;
+        position: relative;
+        display: inline-block;
+        left: 50%; top: 50%;
+        transform: translateX(-50%) translateY(-50%);
+    }
+    .subtitle {
+        font-family: $main-font;
+        font-size: 30px;
+        font-weight: 800;
+        color: $secondary-color;
+        background-color: white;
+        position: absolute;
+        display: inline-block;
+        text-align: center;
+        left: 50%; top: 66%;
+        transform: translateX(-50%);
+        @media(max-width: 497px){
+            display: none; 
+        }
+    }
+    main {
+        width: 70%;
+        height: auto;
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        margin: 0 auto;
+        @media(max-width: 1050px){
+            width: 40%; 
+        }
+        @media(max-width: 968px){
+            width: 50%; 
+        }
+        @media(max-width: 780px){
+            width: 383px;
+        }
+    }
+    footer {
+        #control {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            background-color: $secondary-background-color;
+            font-family: $main-font;
+            #more {
+                width: auto; height: 20px;
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                margin: 10px;
+                padding: 5px;
+                cursor: pointer;
+                p {
+                    display: inline;
+                    margin: 0 auto;
+                    font-size: 14px $main-font 500;
+                    color: white;
+                }
+                :hover {
+                    color: $secondary-color;
+                    font-weight: 800;
+                }
+            }
+        }
+    }
+}
